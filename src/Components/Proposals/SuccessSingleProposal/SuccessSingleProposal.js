@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ipcsAddress,ipcsABI } from '../../../constant.js';
 import { useParams, Link } from "react-router-dom";
-import { Button, Container, HStack , Center , Spinner, VStack , Image, Box, Text , Heading, StepDescription, Alert } from '@chakra-ui/react';
+import { Button, Container, HStack , Center , Spinner, VStack , Image, Box, Text , Heading, StepDescription, Alert, AlertIcon } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import screenshot from "../../../screenshot.png"
 import {ExternalLinkIcon} from "@chakra-ui/icons"
@@ -133,7 +133,7 @@ const SuccessSingleProposal = () => {
   return(
     <Container maxW={"100vw"} minH={'50vh'}>
       {showMetamaskAlert &&
-        <Alert status={type}>{status}</Alert>
+        <Alert status={type}><AlertIcon/>{status}</Alert>
       }
     {
       loading ? 
